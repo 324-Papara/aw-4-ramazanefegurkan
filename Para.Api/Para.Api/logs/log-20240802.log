@@ -1,0 +1,976 @@
+2024-08-02 21:59:48.138 [INF] Application is starting...
+2024-08-02 21:59:51.384 [INF] Start installing Hangfire SQL objects...
+2024-08-02 22:04:23.232 [INF] Application is starting...
+2024-08-02 22:05:45.812 [INF] Application is starting...
+2024-08-02 22:06:13.895 [INF] Application is starting...
+2024-08-02 22:06:47.406 [INF] Application is starting...
+2024-08-02 22:06:48.378 [INF] Start installing Hangfire SQL objects...
+2024-08-02 22:07:03.390 [WRN] An exception occurred while trying to perform the migration. Retrying...
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (2): Sistem belirtilen dosyayı bulamıyor.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Hangfire.SqlServer.SqlServerStorage.CreateAndOpenConnection() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 365
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection[T](DbConnection dedicatedConnection, Func`2 func) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 256
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection(DbConnection dedicatedConnection, Action`1 action) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 243
+   at Hangfire.SqlServer.SqlServerStorage.Initialize() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 424
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:2,State:0,Class:20
+2024-08-02 22:07:03.467 [WRN] An exception occurred while trying to perform the migration. Retrying...
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (2): Sistem belirtilen dosyayı bulamıyor.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Hangfire.SqlServer.SqlServerStorage.CreateAndOpenConnection() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 365
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection[T](DbConnection dedicatedConnection, Func`2 func) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 256
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection(DbConnection dedicatedConnection, Action`1 action) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 243
+   at Hangfire.SqlServer.SqlServerStorage.Initialize() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 424
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:2,State:0,Class:20
+2024-08-02 22:07:03.473 [WRN] An exception occurred while trying to perform the migration.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (2): Sistem belirtilen dosyayı bulamıyor.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Hangfire.SqlServer.SqlServerStorage.CreateAndOpenConnection() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 365
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection[T](DbConnection dedicatedConnection, Func`2 func) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 256
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection(DbConnection dedicatedConnection, Action`1 action) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 243
+   at Hangfire.SqlServer.SqlServerStorage.Initialize() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 424
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:2,State:0,Class:20
+2024-08-02 22:07:03.479 [WRN] Was unable to perform the Hangfire schema migration due to an exception. Ignore this message unless you've just installed or upgraded Hangfire.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (2): Sistem belirtilen dosyayı bulamıyor.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Hangfire.SqlServer.SqlServerStorage.CreateAndOpenConnection() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 365
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection[T](DbConnection dedicatedConnection, Func`2 func) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 256
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection(DbConnection dedicatedConnection, Action`1 action) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 243
+   at Hangfire.SqlServer.SqlServerStorage.Initialize() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 424
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:2,State:0,Class:20
+2024-08-02 22:07:03.486 [ERR] Was unable to use the TryAutoDetectSchemaDependentOptions option due to an exception.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (2): Sistem belirtilen dosyayı bulamıyor.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Hangfire.SqlServer.SqlServerStorage.CreateAndOpenConnection() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 365
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection[T](DbConnection dedicatedConnection, Func`2 func) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 256
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection(DbConnection dedicatedConnection, Action`1 action) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 243
+   at Hangfire.SqlServer.SqlServerStorage.Initialize() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 455
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:2,State:0,Class:20
+2024-08-02 22:07:35.867 [INF] Application is starting...
+2024-08-02 22:07:36.572 [INF] Start installing Hangfire SQL objects...
+2024-08-02 22:07:51.458 [INF] Application is starting...
+2024-08-02 22:07:52.110 [INF] Start installing Hangfire SQL objects...
+2024-08-02 22:08:07.023 [WRN] An exception occurred while trying to perform the migration. Retrying...
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (2): Sistem belirtilen dosyayı bulamıyor.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Hangfire.SqlServer.SqlServerStorage.CreateAndOpenConnection() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 365
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection[T](DbConnection dedicatedConnection, Func`2 func) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 256
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection(DbConnection dedicatedConnection, Action`1 action) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 243
+   at Hangfire.SqlServer.SqlServerStorage.Initialize() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 424
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:2,State:0,Class:20
+2024-08-02 22:08:07.067 [WRN] An exception occurred while trying to perform the migration. Retrying...
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (2): Sistem belirtilen dosyayı bulamıyor.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Hangfire.SqlServer.SqlServerStorage.CreateAndOpenConnection() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 365
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection[T](DbConnection dedicatedConnection, Func`2 func) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 256
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection(DbConnection dedicatedConnection, Action`1 action) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 243
+   at Hangfire.SqlServer.SqlServerStorage.Initialize() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 424
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:2,State:0,Class:20
+2024-08-02 22:08:07.075 [WRN] An exception occurred while trying to perform the migration.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (2): Sistem belirtilen dosyayı bulamıyor.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Hangfire.SqlServer.SqlServerStorage.CreateAndOpenConnection() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 365
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection[T](DbConnection dedicatedConnection, Func`2 func) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 256
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection(DbConnection dedicatedConnection, Action`1 action) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 243
+   at Hangfire.SqlServer.SqlServerStorage.Initialize() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 424
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:2,State:0,Class:20
+2024-08-02 22:08:07.084 [WRN] Was unable to perform the Hangfire schema migration due to an exception. Ignore this message unless you've just installed or upgraded Hangfire.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (2): Sistem belirtilen dosyayı bulamıyor.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Hangfire.SqlServer.SqlServerStorage.CreateAndOpenConnection() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 365
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection[T](DbConnection dedicatedConnection, Func`2 func) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 256
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection(DbConnection dedicatedConnection, Action`1 action) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 243
+   at Hangfire.SqlServer.SqlServerStorage.Initialize() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 424
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:2,State:0,Class:20
+2024-08-02 22:08:07.093 [ERR] Was unable to use the TryAutoDetectSchemaDependentOptions option due to an exception.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (2): Sistem belirtilen dosyayı bulamıyor.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Hangfire.SqlServer.SqlServerStorage.CreateAndOpenConnection() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 365
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection[T](DbConnection dedicatedConnection, Func`2 func) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 256
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection(DbConnection dedicatedConnection, Action`1 action) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 243
+   at Hangfire.SqlServer.SqlServerStorage.Initialize() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 455
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:2,State:0,Class:20
+2024-08-02 22:08:35.296 [INF] Application is starting...
+2024-08-02 22:08:36.226 [INF] Start installing Hangfire SQL objects...
+2024-08-02 22:08:37.232 [INF] Hangfire SQL objects installed.
+2024-08-02 22:08:37.516 [VRB] Recurring job 'send-emails' is being updated. RecurringJob: (), Changes: (Queue:default;Cron:*/5 * * * * *;TimeZoneId:UTC;Job:{"t":"Para.Bussiness.Messaging.EmailConsumer, Para.Bussiness","m":"ProcessQueue"};CreatedAt:1722625717385;NextExecution:1722625720000;V:2)
+2024-08-02 22:08:37.965 [INF] Starting Hangfire Server using job storage: 'SQL Server: 192.168.1.11, 1439@padb'
+2024-08-02 22:08:37.967 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2024-08-02 22:08:37.969 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2024-08-02 22:08:37.984 [DBG] Execution loop BackgroundServerProcess:86016b68 has started in 7,4121 ms
+2024-08-02 22:08:37.994 [VRB] Server desktop-q9jf44c:19916:9752fab0 is announcing itself...
+2024-08-02 22:08:38.015 [INF] Server desktop-q9jf44c:19916:9752fab0 successfully announced in 18,2305 ms
+2024-08-02 22:08:38.021 [DBG] Execution loop ServerHeartbeatProcess:55fc46fa has started in 4,1306 ms
+2024-08-02 22:08:38.021 [INF] Server desktop-q9jf44c:19916:9752fab0 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, SqlServerHeartbeatProcess, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2024-08-02 22:08:38.026 [VRB] Server desktop-q9jf44c:19916:9752fab0 waiting for 00:00:30 delay before sending a heartbeat
+2024-08-02 22:08:38.029 [DBG] Execution loop ServerWatchdog:e5bac7da has started in 4,2637 ms
+2024-08-02 22:08:38.031 [DBG] Execution loop ServerJobCancellationWatcher:4d58d05c has started in 6,5132 ms
+2024-08-02 22:08:38.036 [DBG] Execution loop ExpirationManager:5b55ab5a has started in 3,9026 ms
+2024-08-02 22:08:38.051 [VRB] Checking for aborted jobs...
+2024-08-02 22:08:38.039 [DBG] Execution loop CountersAggregator:40ae039e has started in 6,6251 ms
+2024-08-02 22:08:38.060 [DBG] Removing outdated records from the 'AggregatedCounter' table...
+2024-08-02 22:08:38.068 [VRB] No newly aborted jobs found.
+2024-08-02 22:08:38.073 [DBG] Aggregating records in 'Counter' table...
+2024-08-02 22:08:38.043 [DBG] Execution loop SqlServerHeartbeatProcess:66abe49a has started in 7,4128 ms
+2024-08-02 22:08:38.047 [DBG] Execution loop Worker:120405ba has started in 8,0342 ms
+2024-08-02 22:08:38.051 [DBG] Execution loop Worker:7055564c has started in 11,8721 ms
+2024-08-02 22:08:38.055 [DBG] Execution loop Worker:bed32ded has started in 15,9789 ms
+2024-08-02 22:08:38.134 [VRB] Outdated records removed from the 'AggregatedCounter' table.
+2024-08-02 22:08:38.140 [INF] Server desktop-q9jf44c:19916:9752fab0 all the dispatchers started
+2024-08-02 22:08:38.059 [DBG] Execution loop Worker:6aa9d1b1 has started in 20,029 ms
+2024-08-02 22:08:38.063 [DBG] Execution loop Worker:1ef04d35 has started in 24,0985 ms
+2024-08-02 22:08:38.067 [DBG] Execution loop Worker:9dafed90 has started in 28,066 ms
+2024-08-02 22:08:38.071 [DBG] Execution loop Worker:e9db3c4d has started in 31,9067 ms
+2024-08-02 22:08:38.076 [DBG] Execution loop Worker:58c44d20 has started in 36,6552 ms
+2024-08-02 22:08:38.078 [DBG] Execution loop Worker:6f9ccba9 has started in 39,2167 ms
+2024-08-02 22:08:38.146 [DBG] Removing outdated records from the 'Job' table...
+2024-08-02 22:08:38.164 [VRB] Records from the 'Counter' table aggregated.
+2024-08-02 22:08:38.082 [DBG] Execution loop Worker:833a20aa has started in 43,3272 ms
+2024-08-02 22:08:38.088 [DBG] Execution loop Worker:d783ee40 has started in 49,0594 ms
+2024-08-02 22:08:38.092 [DBG] Execution loop Worker:e093b231 has started in 53,0456 ms
+2024-08-02 22:08:38.096 [DBG] Execution loop Worker:15e8dc78 has started in 57,4283 ms
+2024-08-02 22:08:38.100 [DBG] Execution loop Worker:b35e92e2 has started in 61,2229 ms
+2024-08-02 22:08:38.105 [DBG] Execution loop Worker:d12654f1 has started in 65,6941 ms
+2024-08-02 22:08:38.110 [DBG] Execution loop Worker:2124b2e6 has started in 70,7062 ms
+2024-08-02 22:08:38.116 [DBG] Execution loop Worker:c46b35b6 has started in 76,8237 ms
+2024-08-02 22:08:38.120 [DBG] Execution loop Worker:855da9d1 has started in 81,0017 ms
+2024-08-02 22:08:38.128 [DBG] Execution loop Worker:d5a3d4df has started in 88,7909 ms
+2024-08-02 22:08:38.134 [DBG] Execution loop Worker:5f35dfac has started in 95,142 ms
+2024-08-02 22:08:38.140 [DBG] Execution loop DelayedJobScheduler:e322825f has started in 12,146 ms
+2024-08-02 22:08:38.146 [DBG] Execution loop RecurringJobScheduler:381f2c10 has started in 11,5302 ms
+2024-08-02 22:08:38.179 [VRB] Outdated records removed from the 'Job' table.
+2024-08-02 22:08:38.195 [DBG] Removing outdated records from the 'List' table...
+2024-08-02 22:08:38.209 [VRB] Outdated records removed from the 'List' table.
+2024-08-02 22:08:38.210 [DBG] Removing outdated records from the 'Set' table...
+2024-08-02 22:08:38.224 [VRB] Outdated records removed from the 'Set' table.
+2024-08-02 22:08:38.226 [DBG] Removing outdated records from the 'Hash' table...
+2024-08-02 22:08:38.241 [VRB] Outdated records removed from the 'Hash' table.
+2024-08-02 22:08:43.101 [VRB] Checking for aborted jobs...
+2024-08-02 22:08:43.105 [VRB] No newly aborted jobs found.
+2024-08-02 22:08:48.120 [VRB] Checking for aborted jobs...
+2024-08-02 22:08:48.122 [VRB] No newly aborted jobs found.
+2024-08-02 22:08:53.125 [VRB] Checking for aborted jobs...
+2024-08-02 22:08:53.128 [VRB] No newly aborted jobs found.
+2024-08-02 22:08:53.342 [VRB] Recurring job 'send-emails' is being updated. RecurringJob: (CreatedAt:1722625717385;Cron:*/5 * * * * *;Job:{"t":"Para.Bussiness.Messaging.EmailConsumer, Para.Bussiness","m":"ProcessQueue"};NextExecution:1722625720000;Queue:default;TimeZoneId:UTC;V:2), Changes: (LastExecution:1722625733238;NextExecution:1722625735000;LastJobId:1)
+2024-08-02 22:08:53.376 [DBG] 1 recurring job(s) processed by scheduler.
+2024-08-02 22:08:58.141 [VRB] Checking for aborted jobs...
+2024-08-02 22:08:58.143 [VRB] No newly aborted jobs found.
+2024-08-02 22:09:03.148 [VRB] Checking for aborted jobs...
+2024-08-02 22:09:03.150 [VRB] No newly aborted jobs found.
+2024-08-02 22:09:08.063 [DBG] Server desktop-q9jf44c:19916:9752fab0 heartbeat successfully sent
+2024-08-02 22:09:08.065 [VRB] Server desktop-q9jf44c:19916:9752fab0 waiting for 00:00:30 delay before sending a heartbeat
+2024-08-02 22:09:08.167 [VRB] Checking for aborted jobs...
+2024-08-02 22:09:08.168 [VRB] No newly aborted jobs found.
+2024-08-02 22:09:08.425 [VRB] Recurring job 'send-emails' is being updated. RecurringJob: (CreatedAt:1722625717385;Cron:*/5 * * * * *;Job:{"t":"Para.Bussiness.Messaging.EmailConsumer, Para.Bussiness","m":"ProcessQueue"};LastExecution:1722625733238;LastJobId:1;NextExecution:1722625735000;Queue:default;TimeZoneId:UTC;V:2), Changes: (LastExecution:1722625748401;NextExecution:1722625750000;LastJobId:2)
+2024-08-02 22:09:08.442 [DBG] 1 recurring job(s) processed by scheduler.
+2024-08-02 22:09:13.178 [VRB] Checking for aborted jobs...
+2024-08-02 22:09:13.180 [VRB] No newly aborted jobs found.
+2024-08-02 22:09:18.197 [VRB] Checking for aborted jobs...
+2024-08-02 22:09:18.198 [VRB] No newly aborted jobs found.
+2024-08-02 22:09:23.215 [VRB] Checking for aborted jobs...
+2024-08-02 22:09:23.216 [VRB] No newly aborted jobs found.
+2024-08-02 22:09:23.475 [VRB] Recurring job 'send-emails' is being updated. RecurringJob: (CreatedAt:1722625717385;Cron:*/5 * * * * *;Job:{"t":"Para.Bussiness.Messaging.EmailConsumer, Para.Bussiness","m":"ProcessQueue"};LastExecution:1722625748401;LastJobId:2;NextExecution:1722625750000;Queue:default;TimeZoneId:UTC;V:2), Changes: (LastExecution:1722625763450;NextExecution:1722625765000;LastJobId:3)
+2024-08-02 22:09:23.497 [DBG] 1 recurring job(s) processed by scheduler.
+2024-08-02 22:09:28.223 [VRB] Checking for aborted jobs...
+2024-08-02 22:09:28.225 [VRB] No newly aborted jobs found.
+2024-08-02 22:09:33.234 [VRB] Checking for aborted jobs...
+2024-08-02 22:09:33.235 [VRB] No newly aborted jobs found.
+2024-08-02 22:09:38.082 [DBG] Server desktop-q9jf44c:19916:9752fab0 heartbeat successfully sent
+2024-08-02 22:09:38.084 [VRB] Server desktop-q9jf44c:19916:9752fab0 waiting for 00:00:30 delay before sending a heartbeat
+2024-08-02 22:09:38.247 [VRB] Checking for aborted jobs...
+2024-08-02 22:09:38.248 [VRB] No newly aborted jobs found.
+2024-08-02 22:09:38.520 [VRB] Recurring job 'send-emails' is being updated. RecurringJob: (CreatedAt:1722625717385;Cron:*/5 * * * * *;Job:{"t":"Para.Bussiness.Messaging.EmailConsumer, Para.Bussiness","m":"ProcessQueue"};LastExecution:1722625763450;LastJobId:3;NextExecution:1722625765000;Queue:default;TimeZoneId:UTC;V:2), Changes: (LastExecution:1722625778511;NextExecution:1722625780000;LastJobId:4)
+2024-08-02 22:09:38.537 [DBG] 1 recurring job(s) processed by scheduler.
+2024-08-02 22:09:43.251 [VRB] Checking for aborted jobs...
+2024-08-02 22:09:43.255 [VRB] No newly aborted jobs found.
+2024-08-02 22:09:48.272 [VRB] Checking for aborted jobs...
+2024-08-02 22:09:48.276 [VRB] No newly aborted jobs found.
+2024-08-02 22:09:53.295 [VRB] Checking for aborted jobs...
+2024-08-02 22:09:53.298 [VRB] No newly aborted jobs found.
+2024-08-02 22:09:53.569 [VRB] Recurring job 'send-emails' is being updated. RecurringJob: (CreatedAt:1722625717385;Cron:*/5 * * * * *;Job:{"t":"Para.Bussiness.Messaging.EmailConsumer, Para.Bussiness","m":"ProcessQueue"};LastExecution:1722625778511;LastJobId:4;NextExecution:1722625780000;Queue:default;TimeZoneId:UTC;V:2), Changes: (LastExecution:1722625793544;NextExecution:1722625795000;LastJobId:5)
+2024-08-02 22:09:53.599 [DBG] 1 recurring job(s) processed by scheduler.
+2024-08-02 22:09:58.309 [VRB] Checking for aborted jobs...
+2024-08-02 22:09:58.315 [VRB] No newly aborted jobs found.
+2024-08-02 22:12:38.705 [INF] Application is starting...
+2024-08-02 22:12:39.524 [INF] Start installing Hangfire SQL objects...
+2024-08-02 22:12:39.999 [INF] Hangfire SQL objects installed.
+2024-08-02 22:12:40.204 [VRB] Recurring job 'send-emails' is being updated. RecurringJob: (), Changes: (Queue:default;Cron:*/5 * * * * *;TimeZoneId:UTC;Job:{"t":"Para.Bussiness.Messaging.EmailConsumer, Para.Bussiness","m":"ProcessQueue"};CreatedAt:1722625960107;NextExecution:1722625960000;V:2)
+2024-08-02 22:12:40.450 [INF] Starting Hangfire Server using job storage: 'SQL Server: 192.168.1.11, 1439@padb'
+2024-08-02 22:12:40.452 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2024-08-02 22:12:40.454 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2024-08-02 22:12:40.462 [DBG] Execution loop BackgroundServerProcess:b5c398b4 has started in 4,3539 ms
+2024-08-02 22:12:40.469 [VRB] Server desktop-q9jf44c:9744:7549feab is announcing itself...
+2024-08-02 22:12:40.484 [INF] Server desktop-q9jf44c:9744:7549feab successfully announced in 12,974 ms
+2024-08-02 22:12:40.488 [INF] Server desktop-q9jf44c:9744:7549feab is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, SqlServerHeartbeatProcess, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2024-08-02 22:12:40.490 [DBG] Execution loop ServerHeartbeatProcess:1adf0c11 has started in 3,4932 ms
+2024-08-02 22:12:40.494 [DBG] Execution loop ServerWatchdog:4755b072 has started in 2,608 ms
+2024-08-02 22:12:40.496 [DBG] Execution loop ServerJobCancellationWatcher:9bc01779 has started in 4,3603 ms
+2024-08-02 22:12:40.499 [DBG] Execution loop ExpirationManager:f966b81d has started in 3,9813 ms
+2024-08-02 22:12:40.504 [VRB] Server desktop-q9jf44c:9744:7549feab waiting for 00:00:30 delay before sending a heartbeat
+2024-08-02 22:12:40.516 [DBG] Execution loop Worker:1e69ca7c has started in 14,4031 ms
+2024-08-02 22:12:40.523 [DBG] Execution loop Worker:adaa93fd has started in 22,3311 ms
+2024-08-02 22:12:40.508 [DBG] Execution loop Worker:2642ebae has started in 7,0765 ms
+2024-08-02 22:12:40.505 [VRB] Checking for aborted jobs...
+2024-08-02 22:12:40.519 [DBG] Removing outdated records from the 'AggregatedCounter' table...
+2024-08-02 22:12:40.501 [DBG] Execution loop CountersAggregator:b89c2ca4 has started in 4,8024 ms
+2024-08-02 22:12:40.543 [VRB] No newly aborted jobs found.
+2024-08-02 22:12:40.503 [DBG] Execution loop SqlServerHeartbeatProcess:c01e4c9d has started in 4,5201 ms
+2024-08-02 22:12:40.553 [DBG] Aggregating records in 'Counter' table...
+2024-08-02 22:12:40.564 [INF] Server desktop-q9jf44c:9744:7549feab all the dispatchers started
+2024-08-02 22:12:40.506 [DBG] Execution loop Worker:c2244bee has started in 5,2866 ms
+2024-08-02 22:12:40.513 [DBG] Execution loop Worker:137f8b43 has started in 12,1632 ms
+2024-08-02 22:12:40.519 [DBG] Execution loop Worker:d140bd41 has started in 17,4325 ms
+2024-08-02 22:12:40.522 [DBG] Execution loop Worker:5f872c3e has started in 20,5112 ms
+2024-08-02 22:12:40.526 [DBG] Execution loop Worker:ea4175f8 has started in 25,1725 ms
+2024-08-02 22:12:40.529 [DBG] Execution loop Worker:ddd2d61a has started in 28,2271 ms
+2024-08-02 22:12:40.532 [DBG] Execution loop Worker:9481959b has started in 31,0427 ms
+2024-08-02 22:12:40.535 [DBG] Execution loop Worker:8067a1cd has started in 33,7782 ms
+2024-08-02 22:12:40.537 [DBG] Execution loop Worker:a9f9ac30 has started in 36,0166 ms
+2024-08-02 22:12:40.539 [DBG] Execution loop Worker:1402be7e has started in 38,3683 ms
+2024-08-02 22:12:40.543 [DBG] Execution loop Worker:858144ad has started in 41,5632 ms
+2024-08-02 22:12:40.546 [DBG] Execution loop Worker:b1129732 has started in 44,6658 ms
+2024-08-02 22:12:40.549 [DBG] Execution loop Worker:41d1f555 has started in 47,7538 ms
+2024-08-02 22:12:40.552 [DBG] Execution loop Worker:fdb8489a has started in 50,5781 ms
+2024-08-02 22:12:40.554 [DBG] Execution loop Worker:98a9695b has started in 53,2463 ms
+2024-08-02 22:12:40.558 [DBG] Execution loop Worker:bc925005 has started in 56,9507 ms
+2024-08-02 22:12:40.560 [DBG] Execution loop Worker:7bfe5e99 has started in 59,2995 ms
+2024-08-02 22:12:40.564 [DBG] Execution loop DelayedJobScheduler:00d319a1 has started in 8,7465 ms
+2024-08-02 22:12:40.567 [DBG] Execution loop RecurringJobScheduler:148f4d00 has started in 5,988 ms
+2024-08-02 22:12:40.580 [VRB] Records from the 'Counter' table aggregated.
+2024-08-02 22:12:40.584 [VRB] Outdated records removed from the 'AggregatedCounter' table.
+2024-08-02 22:12:40.594 [DBG] Removing outdated records from the 'Job' table...
+2024-08-02 22:12:40.605 [VRB] Outdated records removed from the 'Job' table.
+2024-08-02 22:12:40.607 [DBG] Removing outdated records from the 'List' table...
+2024-08-02 22:12:40.614 [VRB] Outdated records removed from the 'List' table.
+2024-08-02 22:12:40.616 [DBG] Removing outdated records from the 'Set' table...
+2024-08-02 22:12:40.626 [VRB] Outdated records removed from the 'Set' table.
+2024-08-02 22:12:40.627 [DBG] Removing outdated records from the 'Hash' table...
+2024-08-02 22:12:40.639 [VRB] Outdated records removed from the 'Hash' table.
+2024-08-02 22:12:40.670 [VRB] Recurring job 'send-emails' is being updated. RecurringJob: (CreatedAt:1722625960107;Cron:*/5 * * * * *;Job:{"t":"Para.Bussiness.Messaging.EmailConsumer, Para.Bussiness","m":"ProcessQueue"};NextExecution:1722625960000;Queue:default;TimeZoneId:UTC;V:2), Changes: (LastExecution:1722625960597;NextExecution:1722625965000;LastJobId:1)
+2024-08-02 22:12:40.709 [DBG] 1 recurring job(s) processed by scheduler.
+2024-08-02 22:12:45.560 [VRB] Checking for aborted jobs...
+2024-08-02 22:12:45.561 [VRB] No newly aborted jobs found.
+2024-08-02 22:12:50.573 [VRB] Checking for aborted jobs...
+2024-08-02 22:12:50.575 [VRB] No newly aborted jobs found.
+2024-08-02 22:12:55.578 [VRB] Checking for aborted jobs...
+2024-08-02 22:12:55.580 [VRB] No newly aborted jobs found.
+2024-08-02 22:12:55.780 [VRB] Recurring job 'send-emails' is being updated. RecurringJob: (CreatedAt:1722625960107;Cron:*/5 * * * * *;Job:{"t":"Para.Bussiness.Messaging.EmailConsumer, Para.Bussiness","m":"ProcessQueue"};LastExecution:1722625960597;LastJobId:1;NextExecution:1722625965000;Queue:default;TimeZoneId:UTC;V:2), Changes: (LastExecution:1722625975758;NextExecution:1722625980000;LastJobId:2)
+2024-08-02 22:12:55.797 [DBG] 1 recurring job(s) processed by scheduler.
+2024-08-02 22:13:00.603 [VRB] Checking for aborted jobs...
+2024-08-02 22:13:00.604 [VRB] No newly aborted jobs found.
+2024-08-02 22:13:05.620 [VRB] Checking for aborted jobs...
+2024-08-02 22:13:05.622 [VRB] No newly aborted jobs found.
+2024-08-02 22:13:10.555 [DBG] Server desktop-q9jf44c:9744:7549feab heartbeat successfully sent
+2024-08-02 22:13:10.556 [VRB] Server desktop-q9jf44c:9744:7549feab waiting for 00:00:30 delay before sending a heartbeat
+2024-08-02 22:13:10.626 [VRB] Checking for aborted jobs...
+2024-08-02 22:13:10.630 [VRB] No newly aborted jobs found.
+2024-08-02 22:13:10.830 [VRB] Recurring job 'send-emails' is being updated. RecurringJob: (CreatedAt:1722625960107;Cron:*/5 * * * * *;Job:{"t":"Para.Bussiness.Messaging.EmailConsumer, Para.Bussiness","m":"ProcessQueue"};LastExecution:1722625975758;LastJobId:2;NextExecution:1722625980000;Queue:default;TimeZoneId:UTC;V:2), Changes: (LastExecution:1722625990814;NextExecution:1722625995000;LastJobId:3)
+2024-08-02 22:13:10.878 [DBG] 1 recurring job(s) processed by scheduler.
+2024-08-02 22:13:15.636 [VRB] Checking for aborted jobs...
+2024-08-02 22:13:15.638 [VRB] No newly aborted jobs found.
+2024-08-02 22:15:09.620 [INF] Application is starting...
+2024-08-02 22:15:10.412 [INF] Start installing Hangfire SQL objects...
+2024-08-02 22:15:10.657 [INF] Hangfire SQL objects installed.
+2024-08-02 22:15:11.060 [INF] Starting Hangfire Server using job storage: 'SQL Server: 192.168.1.11, 1439@padb'
+2024-08-02 22:15:11.061 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2024-08-02 22:15:11.063 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2024-08-02 22:15:11.072 [DBG] Execution loop BackgroundServerProcess:b9649275 has started in 4,7937 ms
+2024-08-02 22:15:11.079 [VRB] Server desktop-q9jf44c:21736:f59034bd is announcing itself...
+2024-08-02 22:15:11.102 [INF] Server desktop-q9jf44c:21736:f59034bd successfully announced in 21,8337 ms
+2024-08-02 22:15:11.107 [INF] Server desktop-q9jf44c:21736:f59034bd is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, SqlServerHeartbeatProcess, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2024-08-02 22:15:11.108 [DBG] Execution loop ServerHeartbeatProcess:982fc022 has started in 3,3628 ms
+2024-08-02 22:15:11.112 [DBG] Execution loop ServerWatchdog:1b340492 has started in 2,7182 ms
+2024-08-02 22:15:11.115 [DBG] Execution loop ServerJobCancellationWatcher:bf8d8207 has started in 5,0589 ms
+2024-08-02 22:15:11.120 [DBG] Execution loop ExpirationManager:e113ecf9 has started in 6,9323 ms
+2024-08-02 22:15:11.124 [VRB] Server desktop-q9jf44c:21736:f59034bd waiting for 00:00:30 delay before sending a heartbeat
+2024-08-02 22:15:11.127 [VRB] Checking for aborted jobs...
+2024-08-02 22:15:11.123 [DBG] Execution loop CountersAggregator:c5d4bc5b has started in 8,0226 ms
+2024-08-02 22:15:11.136 [DBG] Removing outdated records from the 'AggregatedCounter' table...
+2024-08-02 22:15:11.141 [VRB] No newly aborted jobs found.
+2024-08-02 22:15:11.144 [DBG] Aggregating records in 'Counter' table...
+2024-08-02 22:15:11.126 [DBG] Execution loop SqlServerHeartbeatProcess:99915611 has started in 6,3037 ms
+2024-08-02 22:15:11.129 [DBG] Execution loop Worker:98f38920 has started in 5,6245 ms
+2024-08-02 22:15:11.133 [DBG] Execution loop Worker:74746753 has started in 9,9439 ms
+2024-08-02 22:15:11.167 [VRB] Outdated records removed from the 'AggregatedCounter' table.
+2024-08-02 22:15:11.135 [DBG] Execution loop Worker:00d7aa68 has started in 11,9947 ms
+2024-08-02 22:15:11.175 [DBG] Removing outdated records from the 'Job' table...
+2024-08-02 22:15:11.138 [DBG] Execution loop Worker:134d0ac5 has started in 14,5654 ms
+2024-08-02 22:15:11.184 [INF] Server desktop-q9jf44c:21736:f59034bd all the dispatchers started
+2024-08-02 22:15:11.140 [DBG] Execution loop Worker:07257e7c has started in 17,092 ms
+2024-08-02 22:15:11.144 [DBG] Execution loop Worker:1d205986 has started in 20,957 ms
+2024-08-02 22:15:11.146 [DBG] Execution loop Worker:a3a58109 has started in 23,1704 ms
+2024-08-02 22:15:11.148 [DBG] Execution loop Worker:941dcc81 has started in 24,572 ms
+2024-08-02 22:15:11.189 [VRB] Records from the 'Counter' table aggregated.
+2024-08-02 22:15:11.150 [DBG] Execution loop Worker:86f1f2bf has started in 27,0003 ms
+2024-08-02 22:15:11.153 [DBG] Execution loop Worker:53ce161b has started in 29,5267 ms
+2024-08-02 22:15:11.155 [DBG] Execution loop Worker:f635d955 has started in 32,1256 ms
+2024-08-02 22:15:11.158 [DBG] Execution loop Worker:5fcc5477 has started in 34,6354 ms
+2024-08-02 22:15:11.161 [DBG] Execution loop Worker:ecc94652 has started in 37,8477 ms
+2024-08-02 22:15:11.165 [DBG] Execution loop Worker:5ab40a33 has started in 41,1768 ms
+2024-08-02 22:15:11.167 [DBG] Execution loop Worker:6da16f4e has started in 43,4875 ms
+2024-08-02 22:15:11.170 [DBG] Execution loop Worker:b9102dd2 has started in 46,5959 ms
+2024-08-02 22:15:11.173 [DBG] Execution loop Worker:6149470e has started in 49,6807 ms
+2024-08-02 22:15:11.176 [DBG] Execution loop Worker:1311fb48 has started in 53,1859 ms
+2024-08-02 22:15:11.178 [DBG] Execution loop Worker:29f964ac has started in 54,9315 ms
+2024-08-02 22:15:11.181 [DBG] Execution loop Worker:23fd4e30 has started in 57,618 ms
+2024-08-02 22:15:11.184 [DBG] Execution loop DelayedJobScheduler:81915349 has started in 5,8371 ms
+2024-08-02 22:15:11.187 [DBG] Execution loop RecurringJobScheduler:a0865bb0 has started in 6,4366 ms
+2024-08-02 22:15:11.203 [VRB] Outdated records removed from the 'Job' table.
+2024-08-02 22:15:11.216 [DBG] Removing outdated records from the 'List' table...
+2024-08-02 22:15:11.225 [VRB] Outdated records removed from the 'List' table.
+2024-08-02 22:15:11.226 [DBG] Removing outdated records from the 'Set' table...
+2024-08-02 22:15:11.231 [VRB] Outdated records removed from the 'Set' table.
+2024-08-02 22:15:11.232 [DBG] Removing outdated records from the 'Hash' table...
+2024-08-02 22:15:11.237 [VRB] Outdated records removed from the 'Hash' table.
+2024-08-02 22:15:11.270 [VRB] Recurring job 'send-emails' is being updated. RecurringJob: (CreatedAt:1722625960107;Cron:*/5 * * * * *;Job:{"t":"Para.Bussiness.Messaging.EmailConsumer, Para.Bussiness","m":"ProcessQueue"};LastExecution:1722625990814;LastJobId:3;NextExecution:1722625995000;Queue:default;TimeZoneId:UTC;V:2), Changes: (LastExecution:1722626111222;NextExecution:1722626115000;LastJobId:4)
+2024-08-02 22:15:11.309 [DBG] 1 recurring job(s) processed by scheduler.
+2024-08-02 22:15:16.165 [VRB] Checking for aborted jobs...
+2024-08-02 22:15:16.167 [VRB] No newly aborted jobs found.
+2024-08-02 22:15:21.175 [VRB] Checking for aborted jobs...
+2024-08-02 22:15:21.181 [VRB] No newly aborted jobs found.
+2024-08-02 22:15:26.187 [VRB] Checking for aborted jobs...
+2024-08-02 22:15:26.197 [VRB] No newly aborted jobs found.
+2024-08-02 22:15:26.369 [VRB] Recurring job 'send-emails' is being updated. RecurringJob: (CreatedAt:1722625960107;Cron:*/5 * * * * *;Job:{"t":"Para.Bussiness.Messaging.EmailConsumer, Para.Bussiness","m":"ProcessQueue"};LastExecution:1722626111222;LastJobId:4;NextExecution:1722626115000;Queue:default;TimeZoneId:UTC;V:2), Changes: (LastExecution:1722626126346;NextExecution:1722626130000;LastJobId:5)
+2024-08-02 22:15:26.444 [DBG] 1 recurring job(s) processed by scheduler.
+2024-08-02 22:15:31.216 [VRB] Checking for aborted jobs...
+2024-08-02 22:15:31.222 [VRB] No newly aborted jobs found.
+2024-08-02 22:15:36.229 [VRB] Checking for aborted jobs...
+2024-08-02 22:15:36.233 [VRB] No newly aborted jobs found.
+2024-08-02 22:15:41.162 [DBG] Server desktop-q9jf44c:21736:f59034bd heartbeat successfully sent
+2024-08-02 22:15:41.164 [VRB] Server desktop-q9jf44c:21736:f59034bd waiting for 00:00:30 delay before sending a heartbeat
+2024-08-02 22:15:41.238 [VRB] Checking for aborted jobs...
+2024-08-02 22:15:41.243 [VRB] No newly aborted jobs found.
+2024-08-02 22:15:41.490 [VRB] Recurring job 'send-emails' is being updated. RecurringJob: (CreatedAt:1722625960107;Cron:*/5 * * * * *;Job:{"t":"Para.Bussiness.Messaging.EmailConsumer, Para.Bussiness","m":"ProcessQueue"};LastExecution:1722626126346;LastJobId:5;NextExecution:1722626130000;Queue:default;TimeZoneId:UTC;V:2), Changes: (LastExecution:1722626141459;NextExecution:1722626145000;LastJobId:6)
+2024-08-02 22:15:41.518 [DBG] 1 recurring job(s) processed by scheduler.
+2024-08-02 22:15:46.253 [VRB] Checking for aborted jobs...
+2024-08-02 22:15:46.255 [VRB] No newly aborted jobs found.
+2024-08-02 22:15:51.259 [VRB] Checking for aborted jobs...
+2024-08-02 22:15:51.262 [VRB] No newly aborted jobs found.
+2024-08-02 22:15:56.277 [VRB] Checking for aborted jobs...
+2024-08-02 22:15:56.280 [VRB] No newly aborted jobs found.
+2024-08-02 22:15:56.562 [VRB] Recurring job 'send-emails' is being updated. RecurringJob: (CreatedAt:1722625960107;Cron:*/5 * * * * *;Job:{"t":"Para.Bussiness.Messaging.EmailConsumer, Para.Bussiness","m":"ProcessQueue"};LastExecution:1722626141459;LastJobId:6;NextExecution:1722626145000;Queue:default;TimeZoneId:UTC;V:2), Changes: (LastExecution:1722626156538;NextExecution:1722626160000;LastJobId:7)
+2024-08-02 22:15:56.578 [DBG] 1 recurring job(s) processed by scheduler.
+2024-08-02 22:16:01.293 [VRB] Checking for aborted jobs...
+2024-08-02 22:16:01.295 [VRB] No newly aborted jobs found.
+2024-08-02 22:16:06.303 [VRB] Checking for aborted jobs...
+2024-08-02 22:16:06.307 [VRB] No newly aborted jobs found.
+2024-08-02 22:16:11.203 [DBG] Server desktop-q9jf44c:21736:f59034bd heartbeat successfully sent
+2024-08-02 22:16:11.204 [VRB] Server desktop-q9jf44c:21736:f59034bd waiting for 00:00:30 delay before sending a heartbeat
+2024-08-02 22:16:11.321 [VRB] Checking for aborted jobs...
+2024-08-02 22:16:11.322 [VRB] No newly aborted jobs found.
+2024-08-02 22:16:11.603 [VRB] Recurring job 'send-emails' is being updated. RecurringJob: (CreatedAt:1722625960107;Cron:*/5 * * * * *;Job:{"t":"Para.Bussiness.Messaging.EmailConsumer, Para.Bussiness","m":"ProcessQueue"};LastExecution:1722626156538;LastJobId:7;NextExecution:1722626160000;Queue:default;TimeZoneId:UTC;V:2), Changes: (LastExecution:1722626171591;NextExecution:1722626175000;LastJobId:8)
+2024-08-02 22:16:11.624 [DBG] 1 recurring job(s) processed by scheduler.
+2024-08-02 22:16:16.326 [VRB] Checking for aborted jobs...
+2024-08-02 22:16:16.328 [VRB] No newly aborted jobs found.
+2024-08-02 22:16:21.337 [VRB] Checking for aborted jobs...
+2024-08-02 22:16:21.344 [VRB] No newly aborted jobs found.
+2024-08-02 22:16:26.357 [VRB] Checking for aborted jobs...
+2024-08-02 22:16:26.361 [VRB] No newly aborted jobs found.
+2024-08-02 22:16:26.662 [VRB] Recurring job 'send-emails' is being updated. RecurringJob: (CreatedAt:1722625960107;Cron:*/5 * * * * *;Job:{"t":"Para.Bussiness.Messaging.EmailConsumer, Para.Bussiness","m":"ProcessQueue"};LastExecution:1722626171591;LastJobId:8;NextExecution:1722626175000;Queue:default;TimeZoneId:UTC;V:2), Changes: (LastExecution:1722626186638;NextExecution:1722626190000;LastJobId:9)
+2024-08-02 22:16:26.684 [DBG] 1 recurring job(s) processed by scheduler.
+2024-08-02 22:16:31.378 [VRB] Checking for aborted jobs...
+2024-08-02 22:16:31.380 [VRB] No newly aborted jobs found.
+2024-08-02 22:16:36.390 [VRB] Checking for aborted jobs...
+2024-08-02 22:16:36.392 [VRB] No newly aborted jobs found.
+2024-08-02 22:16:41.236 [DBG] Server desktop-q9jf44c:21736:f59034bd heartbeat successfully sent
+2024-08-02 22:16:41.239 [VRB] Server desktop-q9jf44c:21736:f59034bd waiting for 00:00:30 delay before sending a heartbeat
+2024-08-02 22:16:41.401 [VRB] Checking for aborted jobs...
+2024-08-02 22:16:41.403 [VRB] No newly aborted jobs found.
+2024-08-02 22:16:41.710 [VRB] Recurring job 'send-emails' is being updated. RecurringJob: (CreatedAt:1722625960107;Cron:*/5 * * * * *;Job:{"t":"Para.Bussiness.Messaging.EmailConsumer, Para.Bussiness","m":"ProcessQueue"};LastExecution:1722626186638;LastJobId:9;NextExecution:1722626190000;Queue:default;TimeZoneId:UTC;V:2), Changes: (LastExecution:1722626201700;NextExecution:1722626205000;LastJobId:10)
+2024-08-02 22:16:41.733 [DBG] 1 recurring job(s) processed by scheduler.
+2024-08-02 22:16:46.417 [VRB] Checking for aborted jobs...
+2024-08-02 22:16:46.421 [VRB] No newly aborted jobs found.
+2024-08-02 22:16:51.439 [VRB] Checking for aborted jobs...
+2024-08-02 22:16:51.442 [VRB] No newly aborted jobs found.
+2024-08-02 22:16:57.817 [VRB] Checking for aborted jobs...
+2024-08-02 22:16:57.832 [VRB] No newly aborted jobs found.
+2024-08-02 22:16:57.840 [VRB] Recurring job 'send-emails' is being updated. RecurringJob: (CreatedAt:1722625960107;Cron:*/5 * * * * *;Job:{"t":"Para.Bussiness.Messaging.EmailConsumer, Para.Bussiness","m":"ProcessQueue"};LastExecution:1722626201700;LastJobId:10;NextExecution:1722626205000;Queue:default;TimeZoneId:UTC;V:2), Changes: (LastExecution:1722626217826;NextExecution:1722626220000;LastJobId:11)
+2024-08-02 22:16:57.860 [DBG] 1 recurring job(s) processed by scheduler.
+2024-08-02 22:17:02.847 [VRB] Checking for aborted jobs...
+2024-08-02 22:17:02.850 [VRB] No newly aborted jobs found.
+2024-08-02 22:17:07.855 [VRB] Checking for aborted jobs...
+2024-08-02 22:17:07.858 [VRB] No newly aborted jobs found.
+2024-08-02 22:17:11.277 [DBG] Server desktop-q9jf44c:21736:f59034bd heartbeat successfully sent
+2024-08-02 22:17:11.279 [VRB] Server desktop-q9jf44c:21736:f59034bd waiting for 00:00:30 delay before sending a heartbeat
+2024-08-02 22:17:12.874 [VRB] Checking for aborted jobs...
+2024-08-02 22:17:12.879 [VRB] No newly aborted jobs found.
+2024-08-02 22:17:12.914 [VRB] Recurring job 'send-emails' is being updated. RecurringJob: (CreatedAt:1722625960107;Cron:*/5 * * * * *;Job:{"t":"Para.Bussiness.Messaging.EmailConsumer, Para.Bussiness","m":"ProcessQueue"};LastExecution:1722626217826;LastJobId:11;NextExecution:1722626220000;Queue:default;TimeZoneId:UTC;V:2), Changes: (LastExecution:1722626232885;NextExecution:1722626235000;LastJobId:12)
+2024-08-02 22:17:12.941 [DBG] 1 recurring job(s) processed by scheduler.
+2024-08-02 22:17:17.891 [VRB] Checking for aborted jobs...
+2024-08-02 22:17:17.895 [VRB] No newly aborted jobs found.
+2024-08-02 22:17:22.900 [VRB] Checking for aborted jobs...
+2024-08-02 22:17:22.902 [VRB] No newly aborted jobs found.
+2024-08-02 22:17:27.910 [VRB] Checking for aborted jobs...
+2024-08-02 22:17:27.913 [VRB] No newly aborted jobs found.
+2024-08-02 22:17:27.984 [VRB] Recurring job 'send-emails' is being updated. RecurringJob: (CreatedAt:1722625960107;Cron:*/5 * * * * *;Job:{"t":"Para.Bussiness.Messaging.EmailConsumer, Para.Bussiness","m":"ProcessQueue"};LastExecution:1722626232885;LastJobId:12;NextExecution:1722626235000;Queue:default;TimeZoneId:UTC;V:2), Changes: (LastExecution:1722626247959;NextExecution:1722626250000;LastJobId:13)
+2024-08-02 22:17:28.002 [DBG] 1 recurring job(s) processed by scheduler.
+2024-08-02 22:17:32.919 [VRB] Checking for aborted jobs...
+2024-08-02 22:17:32.921 [VRB] No newly aborted jobs found.
+2024-08-02 22:17:37.931 [VRB] Checking for aborted jobs...
+2024-08-02 22:17:37.935 [VRB] No newly aborted jobs found.
+2024-08-02 22:17:41.304 [DBG] Server desktop-q9jf44c:21736:f59034bd heartbeat successfully sent
+2024-08-02 22:17:41.306 [VRB] Server desktop-q9jf44c:21736:f59034bd waiting for 00:00:30 delay before sending a heartbeat
+2024-08-02 22:17:42.946 [VRB] Checking for aborted jobs...
+2024-08-02 22:17:42.947 [VRB] No newly aborted jobs found.
+2024-08-02 22:17:43.036 [VRB] Recurring job 'send-emails' is being updated. RecurringJob: (CreatedAt:1722625960107;Cron:*/5 * * * * *;Job:{"t":"Para.Bussiness.Messaging.EmailConsumer, Para.Bussiness","m":"ProcessQueue"};LastExecution:1722626247959;LastJobId:13;NextExecution:1722626250000;Queue:default;TimeZoneId:UTC;V:2), Changes: (LastExecution:1722626263021;NextExecution:1722626265000;LastJobId:14)
+2024-08-02 22:17:43.061 [DBG] 1 recurring job(s) processed by scheduler.
+2024-08-02 22:17:47.956 [VRB] Checking for aborted jobs...
+2024-08-02 22:17:47.959 [VRB] No newly aborted jobs found.
+2024-08-02 22:17:52.973 [VRB] Checking for aborted jobs...
+2024-08-02 22:17:52.976 [VRB] No newly aborted jobs found.
+2024-08-02 22:17:58.018 [VRB] Checking for aborted jobs...
+2024-08-02 22:17:58.023 [VRB] No newly aborted jobs found.
+2024-08-02 22:17:58.098 [VRB] Recurring job 'send-emails' is being updated. RecurringJob: (CreatedAt:1722625960107;Cron:*/5 * * * * *;Job:{"t":"Para.Bussiness.Messaging.EmailConsumer, Para.Bussiness","m":"ProcessQueue"};LastExecution:1722626263021;LastJobId:14;NextExecution:1722626265000;Queue:default;TimeZoneId:UTC;V:2), Changes: (LastExecution:1722626278086;NextExecution:1722626280000;LastJobId:15)
+2024-08-02 22:17:58.116 [DBG] 1 recurring job(s) processed by scheduler.
+2024-08-02 22:18:03.032 [VRB] Checking for aborted jobs...
+2024-08-02 22:18:03.040 [VRB] No newly aborted jobs found.
+2024-08-02 22:18:08.058 [VRB] Checking for aborted jobs...
+2024-08-02 22:18:08.061 [VRB] No newly aborted jobs found.
+2024-08-02 22:18:11.345 [DBG] Server desktop-q9jf44c:21736:f59034bd heartbeat successfully sent
+2024-08-02 22:18:11.346 [VRB] Server desktop-q9jf44c:21736:f59034bd waiting for 00:00:30 delay before sending a heartbeat
+2024-08-02 22:18:13.064 [VRB] Checking for aborted jobs...
+2024-08-02 22:18:13.070 [VRB] No newly aborted jobs found.
+2024-08-02 22:18:13.144 [VRB] Recurring job 'send-emails' is being updated. RecurringJob: (CreatedAt:1722625960107;Cron:*/5 * * * * *;Job:{"t":"Para.Bussiness.Messaging.EmailConsumer, Para.Bussiness","m":"ProcessQueue"};LastExecution:1722626278086;LastJobId:15;NextExecution:1722626280000;Queue:default;TimeZoneId:UTC;V:2), Changes: (LastExecution:1722626293130;NextExecution:1722626295000;LastJobId:16)
+2024-08-02 22:18:13.162 [DBG] 1 recurring job(s) processed by scheduler.
+2024-08-02 22:18:18.076 [VRB] Checking for aborted jobs...
+2024-08-02 22:18:18.081 [VRB] No newly aborted jobs found.
+2024-08-02 22:18:23.095 [VRB] Checking for aborted jobs...
+2024-08-02 22:18:23.096 [VRB] No newly aborted jobs found.
+2024-08-02 22:18:28.109 [VRB] Checking for aborted jobs...
+2024-08-02 22:18:28.113 [VRB] No newly aborted jobs found.
+2024-08-02 22:18:28.194 [VRB] Recurring job 'send-emails' is being updated. RecurringJob: (CreatedAt:1722625960107;Cron:*/5 * * * * *;Job:{"t":"Para.Bussiness.Messaging.EmailConsumer, Para.Bussiness","m":"ProcessQueue"};LastExecution:1722626293130;LastJobId:16;NextExecution:1722626295000;Queue:default;TimeZoneId:UTC;V:2), Changes: (LastExecution:1722626308177;NextExecution:1722626310000;LastJobId:17)
+2024-08-02 22:18:28.213 [DBG] 1 recurring job(s) processed by scheduler.
+2024-08-02 22:18:33.116 [VRB] Checking for aborted jobs...
+2024-08-02 22:18:33.118 [VRB] No newly aborted jobs found.
+2024-08-02 22:18:38.134 [VRB] Checking for aborted jobs...
+2024-08-02 22:18:38.138 [VRB] No newly aborted jobs found.
+2024-08-02 22:18:41.382 [DBG] Server desktop-q9jf44c:21736:f59034bd heartbeat successfully sent
+2024-08-02 22:18:41.384 [VRB] Server desktop-q9jf44c:21736:f59034bd waiting for 00:00:30 delay before sending a heartbeat
+2024-08-02 22:18:43.152 [VRB] Checking for aborted jobs...
+2024-08-02 22:18:43.153 [VRB] No newly aborted jobs found.
+2024-08-02 22:18:43.241 [VRB] Recurring job 'send-emails' is being updated. RecurringJob: (CreatedAt:1722625960107;Cron:*/5 * * * * *;Job:{"t":"Para.Bussiness.Messaging.EmailConsumer, Para.Bussiness","m":"ProcessQueue"};LastExecution:1722626308177;LastJobId:17;NextExecution:1722626310000;Queue:default;TimeZoneId:UTC;V:2), Changes: (LastExecution:1722626323229;NextExecution:1722626325000;LastJobId:18)
+2024-08-02 22:18:43.260 [DBG] 1 recurring job(s) processed by scheduler.
+2024-08-02 22:18:48.159 [VRB] Checking for aborted jobs...
+2024-08-02 22:18:48.161 [VRB] No newly aborted jobs found.
+2024-08-02 22:18:50.917 [ERR] An exception occurred in the database while saving changes for context type 'Para.Data.Context.ParaDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'InsertUser', table 'padb.dbo.CustomerAddress'; column does not allow nulls. INSERT fails.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:41a592c8-983b-4502-81ea-3aefe8bbfa76
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'InsertUser', table 'padb.dbo.CustomerAddress'; column does not allow nulls. INSERT fails.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:41a592c8-983b-4502-81ea-3aefe8bbfa76
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2024-08-02 22:18:51.437 [FTL] Path=/api/Customers || Method=POST || Exception=An error occurred while saving the entity changes. See the inner exception for details.
+2024-08-02 22:18:53.173 [VRB] Checking for aborted jobs...
+2024-08-02 22:18:53.176 [VRB] No newly aborted jobs found.
+2024-08-02 22:18:58.190 [VRB] Checking for aborted jobs...
+2024-08-02 22:18:58.195 [VRB] No newly aborted jobs found.
+2024-08-02 22:18:58.291 [VRB] Recurring job 'send-emails' is being updated. RecurringJob: (CreatedAt:1722625960107;Cron:*/5 * * * * *;Job:{"t":"Para.Bussiness.Messaging.EmailConsumer, Para.Bussiness","m":"ProcessQueue"};LastExecution:1722626323229;LastJobId:18;NextExecution:1722626325000;Queue:default;TimeZoneId:UTC;V:2), Changes: (LastExecution:1722626338270;NextExecution:1722626340000;LastJobId:19)
+2024-08-02 22:18:58.342 [DBG] 1 recurring job(s) processed by scheduler.
+2024-08-02 22:19:03.209 [VRB] Checking for aborted jobs...
+2024-08-02 22:19:03.210 [VRB] No newly aborted jobs found.
+2024-08-02 22:19:08.215 [VRB] Checking for aborted jobs...
+2024-08-02 22:19:08.218 [VRB] No newly aborted jobs found.
+2024-08-02 22:19:11.421 [DBG] Server desktop-q9jf44c:21736:f59034bd heartbeat successfully sent
+2024-08-02 22:19:11.424 [VRB] Server desktop-q9jf44c:21736:f59034bd waiting for 00:00:30 delay before sending a heartbeat
+2024-08-02 22:19:13.226 [VRB] Checking for aborted jobs...
+2024-08-02 22:19:13.231 [VRB] No newly aborted jobs found.
+2024-08-02 22:19:13.381 [VRB] Recurring job 'send-emails' is being updated. RecurringJob: (CreatedAt:1722625960107;Cron:*/5 * * * * *;Job:{"t":"Para.Bussiness.Messaging.EmailConsumer, Para.Bussiness","m":"ProcessQueue"};LastExecution:1722626338270;LastJobId:19;NextExecution:1722626340000;Queue:default;TimeZoneId:UTC;V:2), Changes: (LastExecution:1722626353366;NextExecution:1722626355000;LastJobId:20)
+2024-08-02 22:19:13.400 [DBG] 1 recurring job(s) processed by scheduler.
+2024-08-02 22:19:18.247 [VRB] Checking for aborted jobs...
+2024-08-02 22:19:18.253 [VRB] No newly aborted jobs found.
+2024-08-02 22:19:23.268 [VRB] Checking for aborted jobs...
+2024-08-02 22:19:23.269 [VRB] No newly aborted jobs found.
+2024-08-02 22:19:28.276 [VRB] Checking for aborted jobs...
+2024-08-02 22:19:28.278 [VRB] No newly aborted jobs found.
+2024-08-02 22:19:28.428 [VRB] Recurring job 'send-emails' is being updated. RecurringJob: (CreatedAt:1722625960107;Cron:*/5 * * * * *;Job:{"t":"Para.Bussiness.Messaging.EmailConsumer, Para.Bussiness","m":"ProcessQueue"};LastExecution:1722626353366;LastJobId:20;NextExecution:1722626355000;Queue:default;TimeZoneId:UTC;V:2), Changes: (LastExecution:1722626368413;NextExecution:1722626370000;LastJobId:21)
+2024-08-02 22:19:28.448 [DBG] 1 recurring job(s) processed by scheduler.
+2024-08-02 22:19:33.282 [VRB] Checking for aborted jobs...
+2024-08-02 22:19:33.285 [VRB] No newly aborted jobs found.
+2024-08-02 22:19:38.292 [VRB] Checking for aborted jobs...
+2024-08-02 22:19:38.296 [VRB] No newly aborted jobs found.
+2024-08-02 22:19:41.462 [DBG] Server desktop-q9jf44c:21736:f59034bd heartbeat successfully sent
+2024-08-02 22:19:41.466 [VRB] Server desktop-q9jf44c:21736:f59034bd waiting for 00:00:30 delay before sending a heartbeat
+2024-08-02 22:19:43.309 [VRB] Checking for aborted jobs...
+2024-08-02 22:19:43.312 [VRB] No newly aborted jobs found.
+2024-08-02 22:19:43.477 [VRB] Recurring job 'send-emails' is being updated. RecurringJob: (CreatedAt:1722625960107;Cron:*/5 * * * * *;Job:{"t":"Para.Bussiness.Messaging.EmailConsumer, Para.Bussiness","m":"ProcessQueue"};LastExecution:1722626368413;LastJobId:21;NextExecution:1722626370000;Queue:default;TimeZoneId:UTC;V:2), Changes: (LastExecution:1722626383464;NextExecution:1722626385000;LastJobId:22)
+2024-08-02 22:19:43.498 [DBG] 1 recurring job(s) processed by scheduler.
+2024-08-02 22:19:48.330 [VRB] Checking for aborted jobs...
+2024-08-02 22:19:48.332 [VRB] No newly aborted jobs found.
+2024-08-02 22:19:53.339 [VRB] Checking for aborted jobs...
+2024-08-02 22:19:53.341 [VRB] No newly aborted jobs found.
+2024-08-02 22:19:54.026 [ERR] An exception occurred in the database while saving changes for context type 'Para.Data.Context.ParaDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): String or binary data would be truncated in table 'padb.dbo.Account', column 'CurrencyCode'. Truncated value: 'str'.
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:41a592c8-983b-4502-81ea-3aefe8bbfa76
+Error Number:2628,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): String or binary data would be truncated in table 'padb.dbo.Account', column 'CurrencyCode'. Truncated value: 'str'.
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:41a592c8-983b-4502-81ea-3aefe8bbfa76
+Error Number:2628,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2024-08-02 22:19:54.270 [FTL] Path=/api/Accounts || Method=POST || Exception=An error occurred while saving the entity changes. See the inner exception for details.
+2024-08-02 22:19:58.343 [VRB] Checking for aborted jobs...
+2024-08-02 22:19:58.355 [VRB] No newly aborted jobs found.
+2024-08-02 22:19:58.521 [VRB] Recurring job 'send-emails' is being updated. RecurringJob: (CreatedAt:1722625960107;Cron:*/5 * * * * *;Job:{"t":"Para.Bussiness.Messaging.EmailConsumer, Para.Bussiness","m":"ProcessQueue"};LastExecution:1722626383464;LastJobId:22;NextExecution:1722626385000;Queue:default;TimeZoneId:UTC;V:2), Changes: (LastExecution:1722626398508;NextExecution:1722626400000;LastJobId:23)
+2024-08-02 22:19:58.540 [DBG] 1 recurring job(s) processed by scheduler.
+2024-08-02 22:20:03.359 [VRB] Checking for aborted jobs...
+2024-08-02 22:20:03.361 [VRB] No newly aborted jobs found.
+2024-08-02 22:20:08.363 [VRB] Checking for aborted jobs...
+2024-08-02 22:20:08.364 [VRB] No newly aborted jobs found.
+2024-08-02 22:20:11.163 [INF] 1 servers were removed due to timeout
+2024-08-02 22:20:11.201 [DBG] Aggregating records in 'Counter' table...
+2024-08-02 22:20:11.212 [VRB] Records from the 'Counter' table aggregated.
+2024-08-02 22:20:11.504 [DBG] Server desktop-q9jf44c:21736:f59034bd heartbeat successfully sent
+2024-08-02 22:20:11.507 [VRB] Server desktop-q9jf44c:21736:f59034bd waiting for 00:00:30 delay before sending a heartbeat
+2024-08-02 22:20:13.379 [VRB] Checking for aborted jobs...
+2024-08-02 22:20:13.380 [VRB] No newly aborted jobs found.
+2024-08-02 22:20:13.569 [VRB] Recurring job 'send-emails' is being updated. RecurringJob: (CreatedAt:1722625960107;Cron:*/5 * * * * *;Job:{"t":"Para.Bussiness.Messaging.EmailConsumer, Para.Bussiness","m":"ProcessQueue"};LastExecution:1722626398508;LastJobId:23;NextExecution:1722626400000;Queue:default;TimeZoneId:UTC;V:2), Changes: (LastExecution:1722626413556;NextExecution:1722626415000;LastJobId:24)
+2024-08-02 22:20:13.587 [DBG] 1 recurring job(s) processed by scheduler.
+2024-08-02 22:20:18.390 [VRB] Checking for aborted jobs...
+2024-08-02 22:20:18.391 [VRB] No newly aborted jobs found.
+2024-08-02 22:20:20.664 [ERR] An exception occurred in the database while saving changes for context type 'Para.Data.Context.ParaDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): String or binary data would be truncated in table 'padb.dbo.Account', column 'CurrencyCode'. Truncated value: 'str'.
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:41a592c8-983b-4502-81ea-3aefe8bbfa76
+Error Number:2628,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): String or binary data would be truncated in table 'padb.dbo.Account', column 'CurrencyCode'. Truncated value: 'str'.
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:41a592c8-983b-4502-81ea-3aefe8bbfa76
+Error Number:2628,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2024-08-02 22:20:33.591 [VRB] Checking for aborted jobs...
+2024-08-02 22:20:33.595 [VRB] No newly aborted jobs found.
+2024-08-02 22:20:33.598 [FTL] Path=/api/Accounts || Method=POST || Exception=An error occurred while saving the entity changes. See the inner exception for details.
+2024-08-02 22:20:33.613 [VRB] Recurring job 'send-emails' is being updated. RecurringJob: (CreatedAt:1722625960107;Cron:*/5 * * * * *;Job:{"t":"Para.Bussiness.Messaging.EmailConsumer, Para.Bussiness","m":"ProcessQueue"};LastExecution:1722626413556;LastJobId:24;NextExecution:1722626415000;Queue:default;TimeZoneId:UTC;V:2), Changes: (LastExecution:1722626433595;NextExecution:1722626435000;LastJobId:25)
+2024-08-02 22:20:33.636 [DBG] 1 recurring job(s) processed by scheduler.
+2024-08-02 22:20:38.608 [VRB] Checking for aborted jobs...
+2024-08-02 22:20:38.610 [VRB] No newly aborted jobs found.
+2024-08-02 22:20:40.376 [ERR] An exception occurred in the database while saving changes for context type 'Para.Data.Context.ParaDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Account_Customer_CustomerId". The conflict occurred in database "padb", table "dbo.Customer", column 'Id'.
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:d21bf3d0-3ee9-4714-9216-31a946137306
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Account_Customer_CustomerId". The conflict occurred in database "padb", table "dbo.Customer", column 'Id'.
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:d21bf3d0-3ee9-4714-9216-31a946137306
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2024-08-02 22:20:59.224 [VRB] Checking for aborted jobs...
+2024-08-02 22:20:59.224 [FTL] Path=/api/Accounts || Method=POST || Exception=An error occurred while saving the entity changes. See the inner exception for details.
+2024-08-02 22:20:59.232 [VRB] No newly aborted jobs found.
+2024-08-02 22:20:59.239 [DBG] Server desktop-q9jf44c:21736:f59034bd heartbeat successfully sent
+2024-08-02 22:20:59.244 [VRB] Server desktop-q9jf44c:21736:f59034bd waiting for 00:00:30 delay before sending a heartbeat
+2024-08-02 22:20:59.256 [VRB] Recurring job 'send-emails' is being updated. RecurringJob: (CreatedAt:1722625960107;Cron:*/5 * * * * *;Job:{"t":"Para.Bussiness.Messaging.EmailConsumer, Para.Bussiness","m":"ProcessQueue"};LastExecution:1722626433595;LastJobId:25;NextExecution:1722626435000;Queue:default;TimeZoneId:UTC;V:2), Changes: (LastExecution:1722626459235;NextExecution:1722626460000;LastJobId:26)
+2024-08-02 22:20:59.282 [DBG] 1 recurring job(s) processed by scheduler.
+2024-08-02 22:21:04.242 [VRB] Checking for aborted jobs...
+2024-08-02 22:21:04.247 [VRB] No newly aborted jobs found.
+2024-08-02 22:21:15.294 [VRB] Checking for aborted jobs...
+2024-08-02 22:21:15.409 [VRB] No newly aborted jobs found.
+2024-08-02 22:21:15.423 [VRB] Recurring job 'send-emails' is being updated. RecurringJob: (CreatedAt:1722625960107;Cron:*/5 * * * * *;Job:{"t":"Para.Bussiness.Messaging.EmailConsumer, Para.Bussiness","m":"ProcessQueue"};LastExecution:1722626459235;LastJobId:26;NextExecution:1722626460000;Queue:default;TimeZoneId:UTC;V:2), Changes: (LastExecution:1722626475303;NextExecution:1722626480000;LastJobId:27)
+2024-08-02 22:21:15.444 [DBG] 1 recurring job(s) processed by scheduler.
+2024-08-02 22:21:20.424 [VRB] Checking for aborted jobs...
+2024-08-02 22:21:20.426 [VRB] No newly aborted jobs found.
+2024-08-02 22:26:30.045 [VRB] Checking for aborted jobs...
+2024-08-02 22:26:30.063 [DBG] Server desktop-q9jf44c:21736:f59034bd heartbeat successfully sent
+2024-08-02 22:26:30.071 [VRB] No newly aborted jobs found.
+2024-08-02 22:26:30.783 [VRB] Server desktop-q9jf44c:21736:f59034bd waiting for 00:00:30 delay before sending a heartbeat
+2024-08-02 22:26:30.046 [DBG] Aggregating records in 'Counter' table...
+2024-08-02 22:26:30.077 [VRB] Recurring job 'send-emails' is being updated. RecurringJob: (CreatedAt:1722625960107;Cron:*/5 * * * * *;Job:{"t":"Para.Bussiness.Messaging.EmailConsumer, Para.Bussiness","m":"ProcessQueue"};LastExecution:1722626475303;LastJobId:27;NextExecution:1722626480000;Queue:default;TimeZoneId:UTC;V:2), Changes: (LastExecution:1722626790053;NextExecution:1722626795000;LastJobId:28)
+2024-08-02 22:26:31.836 [VRB] Records from the 'Counter' table aggregated.
+2024-08-02 22:26:31.896 [DBG] 1 recurring job(s) processed by scheduler.
+2024-08-02 22:26:36.796 [VRB] Checking for aborted jobs...
+2024-08-02 22:26:36.800 [VRB] No newly aborted jobs found.
+2024-08-02 22:26:41.803 [VRB] Checking for aborted jobs...
+2024-08-02 22:26:41.805 [VRB] No newly aborted jobs found.
+2024-08-02 22:26:48.887 [VRB] Checking for aborted jobs...
+2024-08-02 22:26:48.889 [VRB] No newly aborted jobs found.
+2024-08-02 22:26:49.008 [VRB] Recurring job 'send-emails' is being updated. RecurringJob: (CreatedAt:1722625960107;Cron:*/5 * * * * *;Job:{"t":"Para.Bussiness.Messaging.EmailConsumer, Para.Bussiness","m":"ProcessQueue"};LastExecution:1722626790053;LastJobId:28;NextExecution:1722626795000;Queue:default;TimeZoneId:UTC;V:2), Changes: (LastExecution:1722626806911;NextExecution:1722626810000;LastJobId:29)
+2024-08-02 22:26:49.038 [DBG] 1 recurring job(s) processed by scheduler.
+2024-08-02 22:26:53.899 [VRB] Checking for aborted jobs...
+2024-08-02 22:26:53.901 [VRB] No newly aborted jobs found.
+2024-08-02 22:26:58.915 [VRB] Checking for aborted jobs...
+2024-08-02 22:26:58.919 [VRB] No newly aborted jobs found.
+2024-08-02 22:27:03.905 [DBG] Server desktop-q9jf44c:21736:f59034bd heartbeat successfully sent
+2024-08-02 22:27:03.908 [VRB] Server desktop-q9jf44c:21736:f59034bd waiting for 00:00:30 delay before sending a heartbeat
+2024-08-02 22:27:03.930 [VRB] Checking for aborted jobs...
+2024-08-02 22:27:03.932 [VRB] No newly aborted jobs found.
+2024-08-02 22:27:04.092 [VRB] Recurring job 'send-emails' is being updated. RecurringJob: (CreatedAt:1722625960107;Cron:*/5 * * * * *;Job:{"t":"Para.Bussiness.Messaging.EmailConsumer, Para.Bussiness","m":"ProcessQueue"};LastExecution:1722626806911;LastJobId:29;NextExecution:1722626810000;Queue:default;TimeZoneId:UTC;V:2), Changes: (LastExecution:1722626821987;NextExecution:1722626825000;LastJobId:30)
+2024-08-02 22:27:04.123 [DBG] 1 recurring job(s) processed by scheduler.
+2024-08-02 22:27:08.944 [VRB] Checking for aborted jobs...
+2024-08-02 22:27:08.945 [VRB] No newly aborted jobs found.
+2024-08-02 22:27:13.953 [VRB] Checking for aborted jobs...
+2024-08-02 22:27:13.956 [VRB] No newly aborted jobs found.
+2024-08-02 22:27:18.973 [VRB] Checking for aborted jobs...
+2024-08-02 22:27:18.976 [VRB] No newly aborted jobs found.
+2024-08-02 22:27:19.168 [VRB] Recurring job 'send-emails' is being updated. RecurringJob: (CreatedAt:1722625960107;Cron:*/5 * * * * *;Job:{"t":"Para.Bussiness.Messaging.EmailConsumer, Para.Bussiness","m":"ProcessQueue"};LastExecution:1722626821987;LastJobId:30;NextExecution:1722626825000;Queue:default;TimeZoneId:UTC;V:2), Changes: (LastExecution:1722626839146;NextExecution:1722626840000;LastJobId:31)
+2024-08-02 22:27:19.188 [DBG] 1 recurring job(s) processed by scheduler.
+2024-08-02 22:27:23.989 [VRB] Checking for aborted jobs...
+2024-08-02 22:27:23.992 [VRB] No newly aborted jobs found.
+2024-08-02 22:27:29.011 [VRB] Checking for aborted jobs...
+2024-08-02 22:27:29.013 [VRB] No newly aborted jobs found.
+2024-08-02 22:27:33.930 [DBG] Server desktop-q9jf44c:21736:f59034bd heartbeat successfully sent
+2024-08-02 22:27:33.931 [VRB] Server desktop-q9jf44c:21736:f59034bd waiting for 00:00:30 delay before sending a heartbeat
+2024-08-02 22:27:34.018 [VRB] Checking for aborted jobs...
+2024-08-02 22:27:34.019 [VRB] No newly aborted jobs found.
+2024-08-02 22:27:34.221 [VRB] Recurring job 'send-emails' is being updated. RecurringJob: (CreatedAt:1722625960107;Cron:*/5 * * * * *;Job:{"t":"Para.Bussiness.Messaging.EmailConsumer, Para.Bussiness","m":"ProcessQueue"};LastExecution:1722626839146;LastJobId:31;NextExecution:1722626840000;Queue:default;TimeZoneId:UTC;V:2), Changes: (LastExecution:1722626854716;NextExecution:1722626855000;LastJobId:32)
+2024-08-02 22:27:34.242 [DBG] 1 recurring job(s) processed by scheduler.
+2024-08-02 22:27:39.022 [VRB] Checking for aborted jobs...
+2024-08-02 22:27:39.028 [VRB] No newly aborted jobs found.
+2024-08-02 22:27:44.037 [VRB] Checking for aborted jobs...
+2024-08-02 22:27:44.038 [VRB] No newly aborted jobs found.
+2024-08-02 22:27:49.045 [VRB] Checking for aborted jobs...
+2024-08-02 22:27:49.047 [VRB] No newly aborted jobs found.
+2024-08-02 22:27:49.316 [VRB] Recurring job 'send-emails' is being updated. RecurringJob: (CreatedAt:1722625960107;Cron:*/5 * * * * *;Job:{"t":"Para.Bussiness.Messaging.EmailConsumer, Para.Bussiness","m":"ProcessQueue"};LastExecution:1722626854716;LastJobId:32;NextExecution:1722626855000;Queue:default;TimeZoneId:UTC;V:2), Changes: (LastExecution:1722626869118;NextExecution:1722626870000;LastJobId:33)
+2024-08-02 22:27:49.338 [DBG] 1 recurring job(s) processed by scheduler.
+2024-08-02 22:27:54.056 [VRB] Checking for aborted jobs...
+2024-08-02 22:27:54.058 [VRB] No newly aborted jobs found.
+2024-08-02 22:30:27.972 [VRB] Checking for aborted jobs...
+2024-08-02 22:30:27.991 [DBG] Server desktop-q9jf44c:21736:f59034bd heartbeat successfully sent
+2024-08-02 22:30:27.992 [VRB] No newly aborted jobs found.
+2024-08-02 22:30:28.016 [VRB] Server desktop-q9jf44c:21736:f59034bd waiting for 00:00:30 delay before sending a heartbeat
+2024-08-02 22:30:28.045 [VRB] Recurring job 'send-emails' is being updated. RecurringJob: (CreatedAt:1722625960107;Cron:*/5 * * * * *;Job:{"t":"Para.Bussiness.Messaging.EmailConsumer, Para.Bussiness","m":"ProcessQueue"};LastExecution:1722626869118;LastJobId:33;NextExecution:1722626870000;Queue:default;TimeZoneId:UTC;V:2), Changes: (LastExecution:1722627028022;NextExecution:1722627030000;LastJobId:34)
+2024-08-02 22:30:28.071 [DBG] 1 recurring job(s) processed by scheduler.
+2024-08-02 22:30:33.033 [VRB] Checking for aborted jobs...
+2024-08-02 22:30:33.044 [VRB] No newly aborted jobs found.
+2024-08-02 22:30:38.045 [VRB] Checking for aborted jobs...
+2024-08-02 22:30:38.048 [VRB] No newly aborted jobs found.
+2024-08-02 22:32:41.647 [VRB] Checking for aborted jobs...
+2024-08-02 22:32:41.657 [DBG] Server desktop-q9jf44c:21736:f59034bd heartbeat successfully sent
+2024-08-02 22:32:41.672 [VRB] No newly aborted jobs found.
+2024-08-02 22:32:41.689 [VRB] Server desktop-q9jf44c:21736:f59034bd waiting for 00:00:30 delay before sending a heartbeat
+2024-08-02 22:32:41.648 [DBG] Aggregating records in 'Counter' table...
+2024-08-02 22:32:41.710 [VRB] Recurring job 'send-emails' is being updated. RecurringJob: (CreatedAt:1722625960107;Cron:*/5 * * * * *;Job:{"t":"Para.Bussiness.Messaging.EmailConsumer, Para.Bussiness","m":"ProcessQueue"};LastExecution:1722627028022;LastJobId:34;NextExecution:1722627030000;Queue:default;TimeZoneId:UTC;V:2), Changes: (LastExecution:1722627161688;NextExecution:1722627165000;LastJobId:35)
+2024-08-02 22:32:41.758 [VRB] Records from the 'Counter' table aggregated.
+2024-08-02 22:32:41.777 [DBG] 1 recurring job(s) processed by scheduler.
+2024-08-02 22:32:46.705 [VRB] Checking for aborted jobs...
+2024-08-02 22:32:46.715 [VRB] No newly aborted jobs found.
+2024-08-02 22:32:51.731 [VRB] Checking for aborted jobs...
+2024-08-02 22:32:51.732 [VRB] No newly aborted jobs found.
+2024-08-02 22:32:56.740 [VRB] Checking for aborted jobs...
+2024-08-02 22:32:56.742 [VRB] No newly aborted jobs found.
+2024-08-02 22:32:56.809 [VRB] Recurring job 'send-emails' is being updated. RecurringJob: (CreatedAt:1722625960107;Cron:*/5 * * * * *;Job:{"t":"Para.Bussiness.Messaging.EmailConsumer, Para.Bussiness","m":"ProcessQueue"};LastExecution:1722627161688;LastJobId:35;NextExecution:1722627165000;Queue:default;TimeZoneId:UTC;V:2), Changes: (LastExecution:1722627176794;NextExecution:1722627180000;LastJobId:36)
+2024-08-02 22:32:56.831 [DBG] 1 recurring job(s) processed by scheduler.
+2024-08-02 22:33:01.759 [VRB] Checking for aborted jobs...
+2024-08-02 22:33:01.765 [VRB] No newly aborted jobs found.
+2024-08-02 22:33:06.776 [VRB] Checking for aborted jobs...
+2024-08-02 22:33:06.781 [VRB] No newly aborted jobs found.
+2024-08-02 22:33:11.754 [DBG] Server desktop-q9jf44c:21736:f59034bd heartbeat successfully sent
+2024-08-02 22:33:11.756 [VRB] Server desktop-q9jf44c:21736:f59034bd waiting for 00:00:30 delay before sending a heartbeat
+2024-08-02 22:33:11.786 [VRB] Checking for aborted jobs...
+2024-08-02 22:33:11.790 [VRB] No newly aborted jobs found.
+2024-08-02 22:33:11.864 [VRB] Recurring job 'send-emails' is being updated. RecurringJob: (CreatedAt:1722625960107;Cron:*/5 * * * * *;Job:{"t":"Para.Bussiness.Messaging.EmailConsumer, Para.Bussiness","m":"ProcessQueue"};LastExecution:1722627176794;LastJobId:36;NextExecution:1722627180000;Queue:default;TimeZoneId:UTC;V:2), Changes: (LastExecution:1722627191851;NextExecution:1722627195000;LastJobId:37)
+2024-08-02 22:33:11.883 [DBG] 1 recurring job(s) processed by scheduler.
+2024-08-02 22:33:16.795 [VRB] Checking for aborted jobs...
+2024-08-02 22:33:16.799 [VRB] No newly aborted jobs found.
+2024-08-02 22:33:21.809 [VRB] Checking for aborted jobs...
+2024-08-02 22:33:21.812 [VRB] No newly aborted jobs found.
+2024-08-02 22:33:26.818 [VRB] Checking for aborted jobs...
+2024-08-02 22:33:26.822 [VRB] No newly aborted jobs found.
+2024-08-02 22:33:26.916 [VRB] Recurring job 'send-emails' is being updated. RecurringJob: (CreatedAt:1722625960107;Cron:*/5 * * * * *;Job:{"t":"Para.Bussiness.Messaging.EmailConsumer, Para.Bussiness","m":"ProcessQueue"};LastExecution:1722627191851;LastJobId:37;NextExecution:1722627195000;Queue:default;TimeZoneId:UTC;V:2), Changes: (LastExecution:1722627206907;NextExecution:1722627210000;LastJobId:38)
+2024-08-02 22:33:26.948 [DBG] 1 recurring job(s) processed by scheduler.
+2024-08-02 22:33:31.831 [VRB] Checking for aborted jobs...
+2024-08-02 22:33:31.834 [VRB] No newly aborted jobs found.
+2024-08-02 22:33:36.850 [VRB] Checking for aborted jobs...
+2024-08-02 22:33:36.852 [VRB] No newly aborted jobs found.
+2024-08-02 22:33:41.793 [DBG] Server desktop-q9jf44c:21736:f59034bd heartbeat successfully sent
+2024-08-02 22:33:41.794 [VRB] Server desktop-q9jf44c:21736:f59034bd waiting for 00:00:30 delay before sending a heartbeat
+2024-08-02 22:33:41.861 [VRB] Checking for aborted jobs...
+2024-08-02 22:33:41.862 [VRB] No newly aborted jobs found.
+2024-08-02 22:33:41.981 [VRB] Recurring job 'send-emails' is being updated. RecurringJob: (CreatedAt:1722625960107;Cron:*/5 * * * * *;Job:{"t":"Para.Bussiness.Messaging.EmailConsumer, Para.Bussiness","m":"ProcessQueue"};LastExecution:1722627206907;LastJobId:38;NextExecution:1722627210000;Queue:default;TimeZoneId:UTC;V:2), Changes: (LastExecution:1722627221973;NextExecution:1722627225000;LastJobId:39)
+2024-08-02 22:33:41.998 [DBG] 1 recurring job(s) processed by scheduler.
+2024-08-02 22:33:46.871 [VRB] Checking for aborted jobs...
+2024-08-02 22:33:46.874 [VRB] No newly aborted jobs found.
